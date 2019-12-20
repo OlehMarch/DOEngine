@@ -1,0 +1,75 @@
+<library_geometries>
+    <geometry id="Cube_004-mesh" name="Cube.004">
+      <mesh>
+        <source id="Cube_004-mesh-positions">
+          <float_array id="Cube_004-mesh-positions-array" count="6">0.7970118 -16.07662 26.79928 0.8262845 -16.00912 26.75949</float_array>
+          <technique_common>
+            <accessor source="#Cube_004-mesh-positions-array" count="2" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cube_004-mesh-normals">
+          <float_array id="Cube_004-mesh-normals-array" count="6">0.7970118 -16.07662 26.79928 0.8262845 -16.00912 26.75949</float_array>
+          <technique_common>
+            <accessor source="#Cube_004-mesh-normals-array" count="2" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cube_004-mesh-map-0">
+          <float_array id="Cube_004-mesh-map-0-array" count="227916"></float_array>
+          <technique_common>
+            <accessor source="#Cube_004-mesh-map-0-array" count="113958" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cube_004-mesh-map-1">
+          <float_array id="Cube_004-mesh-map-1-array" count="227916"></float_array>
+          <technique_common>
+            <accessor source="#Cube_004-mesh-map-1-array" count="113958" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Cube_004-mesh-vertices">
+          <input semantic="POSITION" source="#Cube_004-mesh-positions"/>
+        </vertices>
+        <lines count="6">
+          <input semantic="VERTEX" source="#Cube_004-mesh-vertices" offset="0"/>
+          <p>6072 14477 14478 6072 7337 14477 15182 7337 14108 14478 17337 14108</p>
+        </lines>
+        <polylist material="Game_dragon_001-material" count="36656">
+          <input semantic="VERTEX" source="#Cube_004-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cube_004-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Cube_004-mesh-map-0" offset="2" set="0"/>
+          <input semantic="TEXCOORD" source="#Cube_004-mesh-map-1" offset="2" set="1"/>
+          <vcount></vcount>
+          <p></p>
+        </polylist>
+        <polylist material="Game_dragon-material" count="226">
+          <input semantic="VERTEX" source="#Cube_004-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cube_004-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Cube_004-mesh-map-0" offset="2" set="0"/>
+          <input semantic="TEXCOORD" source="#Cube_004-mesh-map-1" offset="2" set="1"/>
+          <vcount></vcount>
+          <p></p>
+        </polylist>
+        <polylist material="EYES-material" count="1104">
+          <input semantic="VERTEX" source="#Cube_004-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cube_004-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Cube_004-mesh-map-0" offset="2" set="0"/>
+          <input semantic="TEXCOORD" source="#Cube_004-mesh-map-1" offset="2" set="1"/>
+          <vcount></vcount>
+          <p></p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>

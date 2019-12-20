@@ -1,0 +1,17 @@
+[TEXTURES]
+[MODEL_START_SECTION]
+	*MODEL_NAME 'hause2.obj'
+	*MATERIAL_COUNT 3
+	[MATERIAL_START_SECTION]
+		*MATERIAL_NUMBER 0
+		*MATERIAL_PATH 'D:\Конечная папка\C# Programs\D.O.E\Models\rooftop_text.png'
+	[MATERIAL_END_SECTION]
+	[MATERIAL_START_SECTION]
+		*MATERIAL_NUMBER 1
+		*MATERIAL_PATH 'D:\Конечная папка\C# Programs\D.O.E\Models\rooftop_text.png'
+	[MATERIAL_END_SECTION]
+	[MATERIAL_START_SECTION]
+		*MATERIAL_NUMBER 2
+		*MATERIAL_PATH 'D:\Конечная папка\C# Programs\D.O.E\Models\wall.jpg'
+	[MATERIAL_END_SECTION]
+[MODEL_END_SECTION]

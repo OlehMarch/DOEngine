@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44218E38-CF31-45A5-AC2D-B0CCDB2E5B5B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WpfShadow</RootNamespace>
+    <AssemblyName>WpfShadow</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AssimpNet">
+      <HintPath>..\Shadow\bin\Debug\AssimpNet.dll</HintPath>
+    </Reference>
+    <Reference Include="CParser">
+      <HintPath>..\Shadow\bin\Debug\CParser.dll</HintPath>
+    </Reference>
+    <Reference Include="FramebufferAPI">
+      <HintPath>..\Shadow\bin\Debug\FramebufferAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK">
+      <HintPath>..\Shadow\bin\Debug\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl">
+      <HintPath>..\Shadow\bin\Debug\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Programmable PipelineLight">
+      <HintPath>..\Shadow\bin\Debug\Programmable PipelineLight.dll</HintPath>
+    </Reference>
+    <Reference Include="ShaderPattern">
+      <HintPath>..\Shadow\bin\Debug\ShaderPattern.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="TextureLoader">
+      <HintPath>..\Shadow\bin\Debug\TextureLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="VBO">
+      <HintPath>..\Shadow\bin\Debug\VBO.dll</HintPath>
+    </Reference>
+    <Reference Include="VectorMath">
+      <HintPath>..\Shadow\bin\Debug\VectorMath.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Api\Camera.cs" />
+    <Compile Include="Api\Collector\MediaCollector.cs" />
+    <Compile Include="Api\Collector\ModelCollect\ModelCollection.cs" />
+    <Compile Include="Api\Collector\ModelCollect\ModelCollector.cs" />
+    <Compile Include="Api\Collector\ModelCollect\VaoAllocator.cs" />
+    <Compile Include="Api\Collector\RawModel.cs" />
+    <Compile Include="Api\Collector\ShaderCollect\ShaderAllocator.cs" />
+    <Compile Include="Api\Collector\ShaderCollect\ShaderCollection.cs" />
+    <Compile Include="Api\Collector\ShaderCollect\ShaderCollector.cs" />
+    <Compile Include="Api\Folder.cs" />
+    <Compile Include="Api\ModelLoader.cs" />
+    <Compile Include="Api\TextureLoader.cs" />
+    <Compile Include="Entities\EntityShader.cs" />
+    <Compile Include="Entities\Floor.cs" />
+    <Compile Include="Entities\RenderEntity.cs" />
+    <Compile Include="LightCycle.cs" />
+    <Compile Include="Shadow\ShadowFramebuffer.cs" />
+    <Compile Include="Shadow\ShadowRenderer.cs" />
+    <Compile Include="Shadow\ShadowShader.cs" />
+    <Compile Include="Skybox\SkyboxRenderer.cs" />
+    <Compile Include="Skybox\SkyboxShader.cs" />
+    <Compile Include="UI\UiRenderer.cs" />
+    <Compile Include="UI\UiShader.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="models\City_House_2_BI.obj" />
+    <None Include="models\dragon.obj" />
+    <None Include="models\playerCube.obj" />
+    <None Include="models\sphere.obj" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="shaders\entityFS.glsl" />
+    <None Include="shaders\entityVS.glsl" />
+    <None Include="shaders\shadowFS.glsl" />
+    <None Include="shaders\shadowVS.glsl" />
+    <None Include="shaders\skyboxFS.glsl" />
+    <None Include="shaders\skyboxVS.glsl" />
+    <None Include="shaders\uiFS.glsl" />
+    <None Include="shaders\uiVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="textures\b.png" />
+    <Resource Include="textures\brick_nm_high.png" />
+    <Resource Include="textures\city_house_2_Col.jpg" />
+    <Resource Include="textures\city_house_2_Nor.jpg" />
+    <Resource Include="textures\Day\Back.bmp" />
+    <Resource Include="textures\Day\bottom.bmp" />
+    <Resource Include="textures\Day\Front.bmp" />
+    <Resource Include="textures\Day\Left.bmp" />
+    <Resource Include="textures\Day\Right.bmp" />
+    <Resource Include="textures\Day\top.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
